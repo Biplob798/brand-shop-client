@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
   const navLinks = (
     <>
       <li>
@@ -73,6 +77,21 @@ const Navbar = () => {
               ? " underline font-bold text-base"
               : " font-semibold "
           }
+          to="/register"
+        >
+          {" "}
+          Register{" "}
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? " underline font-bold text-base"
+              : " font-semibold "
+          }
           to="/login"
         >
           {" "}
@@ -116,15 +135,34 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
+
+        {/* avatar part  */}
+
         <div className="navbar-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img src="https://i.ibb.co/2FCcbGV/user.png" alt="" />
+          {user?.email ? (
+            <div className="flex justify-center items-center">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src={user.photoURL} alt={user.displayName} />
+                </div>
+              </label>
+              <ul className="flex justify-center items-center gap-1  mt-2 z-[1] p-2  bg-[#101b2d] h-16 text-white">
+                <li>
+                  <button className="text-white">{user.displayName}</button>
+                </li>
+                <li>
+                  <button
+                    onClick={logOut}
+                    className="text-center btn btn-outline text-white"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
             </div>
-          </label>
-          <Link>
-            <button className="btn btn-sm bg-black text-white">Login</button>
-          </Link>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
         </div>
       </div>
     </div>
