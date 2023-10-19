@@ -7,6 +7,7 @@ import AddProduct from "../Pages/addProductPage/AddProduct";
 
 import MyCart from "../Pages/myCartPage/MyCart";
 import Register from "../Pages/loginPage/Register";
+import Private from "../privateRoute/Private";
 
 const router = createBrowserRouter([
   {
@@ -17,14 +18,23 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("brands.json"),
       },
       {
         path: "/addProduct",
-        element: <AddProduct></AddProduct>,
+        element: (
+          <Private>
+            <AddProduct></AddProduct>
+          </Private>
+        ),
       },
       {
         path: "/myCart",
-        element: <MyCart></MyCart>,
+        element: (
+          <Private>
+            <MyCart></MyCart>
+          </Private>
+        ),
       },
 
       {

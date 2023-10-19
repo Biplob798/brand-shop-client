@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { user, signIn, googleLogin } = useContext(AuthContext);
   console.log(user);
+  const navigate = useNavigate();
+
+  const location = useLocation();
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -17,9 +21,13 @@ const Login = () => {
     // sinIn a user
     signIn(email, password)
       .then((result) => {
-        console.log(result.user);
+        toast.success("user create successfully");
+        e.target.reset();
+        console.log(result);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
+        toast.error("please try again");
         console.log(error);
       });
   };
@@ -28,25 +36,27 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then((result) => {
+        toast.success("user create successfully");
         console.log(result);
-        Navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
+        toast.error("please try again");
         console.log(error);
       });
   };
 
   return (
-    <div className="border bg-orange-400">
+    <div>
       {" "}
       <div className="hero min-h-screen border bg-slate-700 p-6">
-        <div className="hero-content flex-col bg-black">
-          <div className="text-center lg:text-left bg-black text-white">
-            <h1 className="text-5xl font-bold border rounded-lg p-4 shadow-2xl">
+        <div className="hero-content flex-col bg-slate-400">
+          <div className="text-center lg:text-left bg-slate-400 text-white">
+            <h1 className="text-5xl font-bold border rounded-lg p-4 shadow-2xl bg-slate-400 text-black">
               Login now
             </h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-400">
             <form onSubmit={handleSignIn}>
               <div className="card-body">
                 <div className="form-control">
@@ -58,7 +68,7 @@ const Login = () => {
                     name="email"
                     placeholder="email"
                     required
-                    className="input input-bordered"
+                    className="input input-bordered bg-slate-400 text-white"
                   />
                 </div>
                 <div className="form-control">
@@ -70,7 +80,7 @@ const Login = () => {
                     name="password"
                     placeholder="password"
                     required
-                    className="input input-bordered"
+                    className="input input-bordered bg-slate-400 text-white"
                   />
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">
@@ -82,18 +92,26 @@ const Login = () => {
                   <button className=" btn btn-outline">Login</button>
                 </div>
                 <label className="label">
-                  New here? <Link to="/register">Create an account</Link>
+                  New here?{" "}
+                  <Link
+                    to="/register"
+                    className="label-text-alt link link-hover"
+                  >
+                    Create an account
+                  </Link>
                 </label>
               </div>
             </form>
             <p className="text-center space-x-5 p-4">
               <button
                 onClick={handleGoogleLogin}
-                className=" btn btn-sm bg-white"
+                className=" btn btn-sm bg-slate-400 text-black"
               >
                 Google
               </button>
-              <button className=" btn btn-sm bg-white">Github</button>
+              <button className=" btn btn-sm bg-slate-400 text-black">
+                Github
+              </button>
             </p>
           </div>
         </div>

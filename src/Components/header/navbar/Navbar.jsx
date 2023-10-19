@@ -148,12 +148,14 @@ const Navbar = () => {
               </label>
               <ul className="flex justify-center items-center gap-1  mt-2 z-[1] p-2  bg-[#101b2d] h-16 text-white">
                 <li>
-                  <button className="text-white">{user.displayName}</button>
+                  <button className="text-center btn btn-outline text-white rounded-full">
+                    {user.displayName}
+                  </button>
                 </li>
                 <li>
                   <button
                     onClick={logOut}
-                    className="text-center btn btn-outline text-white"
+                    className="text-center btn btn-outline text-white rounded-full"
                   >
                     Logout
                   </button>

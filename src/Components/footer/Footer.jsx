@@ -7,12 +7,22 @@ import {
 } from "react-icons/fa";
 import { BiSolidPhoneCall } from "react-icons/Bi";
 import { AiOutlineMail } from "react-icons/Ai";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 const Footer = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div>
       <div className="footer flex justify-center items-center gap-4 bg-[#101b2d] text-white p-4">
         {/* left side  */}
-        <div>
+        <div
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           <img
             className="h-16"
             src="https://i.ibb.co/CJYbvFM/logo.jpg"
@@ -44,7 +54,11 @@ const Footer = () => {
           </div>
         </div>
         {/* right side  */}
-        <div>
+        <div
+          data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           {/* form  */}
 
           <div className="hero min-h-screen">

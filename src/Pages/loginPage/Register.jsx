@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, handleUpdateProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -27,9 +28,15 @@ const Register = () => {
     // create a user
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        handleUpdateProfile(name, img).then(() => {
+          toast.success("user create successfully");
+          e.target.reset();
+          navigate("/");
+          console.log(result);
+        });
       })
       .catch((error) => {
+        toast.error("please try again");
         console.log(error);
       });
   };
@@ -37,14 +44,14 @@ const Register = () => {
   return (
     <div>
       {" "}
-      <div className="hero min-h-screen p-8  ">
-        <div className="hero-content flex-col bg-white text-black ">
+      <div className="hero min-h-screen p-8 bg-slate-700 ">
+        <div className="hero-content flex-col bg-slate-400 text-black ">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold border rounded-lg p-4 shadow-2xl">
+            <h1 className="text-5xl font-bold border rounded-lg p-4 shadow-2xl bg-slate-400 text-black">
               Register now
             </h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-400 text-black">
             <form onSubmit={handleRegister}>
               <div className="card-body">
                 <div className="form-control">
@@ -56,7 +63,7 @@ const Register = () => {
                     name="name"
                     placeholder="your name"
                     required
-                    className="input input-bordered"
+                    className="input input-bordered bg-slate-400 text-black"
                   />
                 </div>
                 <div className="form-control">
@@ -68,7 +75,7 @@ const Register = () => {
                     name="img"
                     placeholder="image url"
                     required
-                    className="input input-bordered"
+                    className="input input-bordered bg-slate-400 text-black"
                   />
                 </div>
 
@@ -81,7 +88,7 @@ const Register = () => {
                     name="email"
                     placeholder="email"
                     required
-                    className="input input-bordered"
+                    className="input input-bordered bg-slate-400 text-black"
                   />
                 </div>
                 <div className="form-control">
@@ -93,7 +100,7 @@ const Register = () => {
                     name="password"
                     placeholder="password"
                     required
-                    className="input input-bordered"
+                    className="input input-bordered bg-slate-400 text-black"
                   />
 
                   <label className="label">
@@ -103,7 +110,7 @@ const Register = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6 p-0">
-                  <button className="btn btn-outline">Register</button>
+                  <button className="btn btn-outline ">Register</button>
                 </div>
                 <label className="label">
                   Have a account?{" "}
