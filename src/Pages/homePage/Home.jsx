@@ -19,7 +19,7 @@ const Home = () => {
             We are a bespoke branding firm with a zest for strong & purposeful
             design. We are thinkers, creators, problem solvers and artists. We
             bring creative flair and strategic thinking to every project, to
-            ensure we craft brands that are recognised, remembered and revered.
+            ensure we craft brands that are recognized, remembered and revered.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

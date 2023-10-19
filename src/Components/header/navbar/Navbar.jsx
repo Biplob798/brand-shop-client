@@ -22,6 +22,7 @@ const Navbar = () => {
           Home{" "}
         </NavLink>
       </li>
+
       <li>
         <NavLink
           className={({ isActive, isPending }) =>
@@ -35,6 +36,21 @@ const Navbar = () => {
         >
           {" "}
           AddProduct{" "}
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? " underline font-bold text-base"
+              : " font-semibold "
+          }
+          to="/updateProduct"
+        >
+          {" "}
+          updateProduct{" "}
         </NavLink>
       </li>
 
