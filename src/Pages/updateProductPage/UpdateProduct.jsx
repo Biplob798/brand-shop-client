@@ -1,11 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 
 const UpdateProduct = () => {
-  const products = useLoaderData();
+  const product = useLoaderData();
+  console.log(product);
 
   return (
     <div>
-      <h2>this is update product page {products.length}</h2>
+      <h2>this is update product page</h2>
     </div>
   );
 };

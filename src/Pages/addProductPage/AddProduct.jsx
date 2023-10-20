@@ -14,16 +14,37 @@ const AddProduct = () => {
     const photo = form.photo.value;
 
     const newProduct = { name, price, description, brand, type, rating, photo };
+    const newBrand = { brand, photo };
 
     console.log(newProduct);
 
-    // send data to the server
+    // send data to the server product
     fetch("http://localhost:5000/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(newProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "success!",
+            text: "Product added successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+    // send data to the server brants
+    fetch("http://localhost:5000/brand", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newBrand),
     })
       .then((res) => res.json())
       .then((data) => {
