@@ -1,16 +1,19 @@
+import React from "react";
 import PropTypes from "prop-types";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-const BrandsCard = ({ productsBrand }) => {
-  const { _id, brand, photo } = productsBrand;
+const MyAllCart = ({ productsBrand }) => {
+  const { _id, brand, photo, name, description, rating, type, price } =
+    productsBrand;
   console.log(productsBrand);
   useEffect(() => {
     Aos.init();
   }, []);
+
   return (
     <div>
+      {/*all brand product  */}
       <div
         className="card p-6 bg-gray-200 "
         data-aos="fade-right"
@@ -25,13 +28,24 @@ const BrandsCard = ({ productsBrand }) => {
           <h2 className="card-title text-2xl font-bold text-gray-700">
             {brand}!
           </h2>
+          <p className="text-2xl font-bold"> {name}</p>
+          <p>{description}</p>
+          <div className="flex justify-center items-center py-4 gap-4">
+            {" "}
+            <p>$ {price}</p>
+            <p className="text-amber-600 font-bold">Rating {rating} ster</p>
+            <p>{type}</p>
+          </div>
 
           <div className="card-actions">
             {" "}
-            <Link to={`brandProduct/${brand}`}>
-              {" "}
-              <button className="btn btn-outline">click Please</button>
-            </Link>
+            <button className="w-full mt-4 btn btn-outline">
+              view Details
+            </button>
+          </div>
+          <div className="card-actions ">
+            {" "}
+            <button className="w-full mt-4 btn btn-outline">Update</button>
           </div>
         </div>
       </div>
@@ -39,7 +53,7 @@ const BrandsCard = ({ productsBrand }) => {
   );
 };
 
-export default BrandsCard;
-BrandsCard.propTypes = {
+export default MyAllCart;
+MyAllCart.propTypes = {
   productsBrand: PropTypes.object,
 };

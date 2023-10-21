@@ -9,6 +9,8 @@ import MyCart from "../Pages/myCartPage/MyCart";
 import Register from "../Pages/loginPage/Register";
 import Private from "../privateRoute/Private";
 import UpdateProduct from "../Pages/updateProductPage/UpdateProduct";
+import BrandProduct from "../Components/brandProduct/BrandProduct";
+import ViewDetails from "../Pages/viewDetails/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/brand"),
+        loader: () => fetch("http://localhost:5000/product"),
       },
       {
         path: "/addProduct",
@@ -30,13 +32,32 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/updateProduct/:id",
+        path: "/updateProduct",
         element: (
           <Private>
             <UpdateProduct></UpdateProduct>
           </Private>
         ),
+      },
+      {
+        path: "/brandProduct/:brand",
+        element: (
+          <Private>
+            <BrandProduct></BrandProduct>
+          </Private>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product/${params.brand}`),
+      },
 
+      {
+        path: "/viewDetails/:id",
+        element: (
+          <Private>
+            {" "}
+            <ViewDetails></ViewDetails>
+          </Private>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/product/${params.id}`),
       },
@@ -47,6 +68,7 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </Private>
         ),
+        loader: () => fetch("http://localhost:5000/product"),
       },
 
       {

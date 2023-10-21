@@ -5,8 +5,8 @@ import Banner from "../../Components/header/banner/Banner";
 import BrandsCard from "./BrandsCard";
 
 const Home = () => {
-  const brands = useLoaderData();
-  console.log(brands);
+  const productsBrandLoader = useLoaderData();
+
   return (
     <div>
       <Banner></Banner>
@@ -24,8 +24,8 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* brands card  */}
-          {brands.map((brand) => (
-            <BrandsCard key={brand.id} brands={brand}></BrandsCard>
+          {productsBrandLoader.slice(0, 6).map((brand) => (
+            <BrandsCard key={brand.id} productsBrand={brand}></BrandsCard>
           ))}
         </div>
       </div>
