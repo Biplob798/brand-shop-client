@@ -3,6 +3,7 @@ import FollowInstagram from "../../Components/followInstagram/FollowInstagram";
 import Banner from "../../Components/header/banner/Banner";
 
 import BrandsCard from "./BrandsCard";
+import CustomerFeedback from "../../Components/CustomerFeedback/CustomerFeedback";
 
 const Home = () => {
   const productsBrandLoader = useLoaderData();
@@ -30,6 +31,7 @@ const Home = () => {
         </div>
       </div>
       <FollowInstagram></FollowInstagram>
+      <CustomerFeedback></CustomerFeedback>
     </div>
   );
 };

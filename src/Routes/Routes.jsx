@@ -5,7 +5,6 @@ import Home from "../Pages/homePage/Home";
 import Login from "../Pages/loginPage/Login";
 import AddProduct from "../Pages/addProductPage/AddProduct";
 
-import MyCart from "../Pages/myCartPage/MyCart";
 import Register from "../Pages/loginPage/Register";
 import Private from "../privateRoute/Private";
 import UpdateProduct from "../Pages/updateProductPage/UpdateProduct";
@@ -60,15 +59,6 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/product/${params.id}`),
-      },
-      {
-        path: "/myCart",
-        element: (
-          <Private>
-            <MyCart></MyCart>
-          </Private>
-        ),
-        loader: () => fetch("http://localhost:5000/product"),
       },
 
       {

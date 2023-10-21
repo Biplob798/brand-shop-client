@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 const BrandsCard = ({ productsBrand }) => {
-  const { _id, brand, photo } = productsBrand;
+  const { brand, photo } = productsBrand;
   console.log(productsBrand);
   useEffect(() => {
     Aos.init();

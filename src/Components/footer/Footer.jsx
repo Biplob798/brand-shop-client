@@ -7,22 +7,13 @@ import {
 } from "react-icons/fa";
 import { BiSolidPhoneCall } from "react-icons/Bi";
 import { AiOutlineMail } from "react-icons/Ai";
-import { useEffect } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
+
 const Footer = () => {
-  useEffect(() => {
-    Aos.init();
-  }, []);
   return (
     <div>
-      <div className="footer flex justify-center items-center gap-4 bg-[#101b2d] text-white p-4">
+      <div className="footer flex justify-center items-center bg-[#101b2d] text-white p-4">
         {/* left side  */}
-        <div
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-        >
+        <div>
           <img
             className="h-16"
             src="https://i.ibb.co/CJYbvFM/logo.jpg"
@@ -51,62 +42,6 @@ const Footer = () => {
           <div className="flex justify-center items-center gap-2">
             <FaLocationArrow></FaLocationArrow>
             <p>72, Wall street, King Road, Dhaka</p>
-          </div>
-        </div>
-        {/* right side  */}
-        <div
-          data-aos="fade-left"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-        >
-          {/* form  */}
-
-          <div className="hero min-h-screen">
-            <div className="hero-content">
-              <div className="text-center lg:text-left"></div>
-              <div className="card flex-shrink-0 w-full max-w-sm ">
-                <form className="card-body">
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text text-white">Name</span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="name"
-                      name="name"
-                      className="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text text-white">Email</span>
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="email"
-                      name="email"
-                      className="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div className="form-control ">
-                    <label className="label">
-                      <span className="label-text text-white">Message</span>
-                    </label>
-                    <textarea
-                      placeholder="Write here"
-                      className="textarea textarea-bordered textarea-lg w-full max-w-xs"
-                    ></textarea>
-                  </div>
-                  <div className="form-control mt-6">
-                    <button className="text-[#331A15] rounded-md btn bg-white ">
-                      Send Message
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
           </div>
         </div>
       </div>
