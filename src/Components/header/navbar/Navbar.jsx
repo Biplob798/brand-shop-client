@@ -78,7 +78,7 @@ const Navbar = () => {
               ? " underline font-bold text-base"
               : " font-semibold "
           }
-          to="/myCart"
+          to="/cart"
         >
           {" "}
           My Cart{" "}
