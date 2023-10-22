@@ -11,7 +11,7 @@ import { AiOutlineMail } from "react-icons/Ai";
 const Footer = () => {
   return (
     <div>
-      <div className="footer flex justify-center items-center bg-[#101b2d] text-white p-4">
+      <div className="footer flex justify-center items-center bg-[#101b2d] text-white p-4 my-6">
         {/* left side  */}
         <div>
           <img

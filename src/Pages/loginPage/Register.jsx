@@ -1,10 +1,18 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const { createUser, handleUpdateProfile } = useContext(AuthContext);
+
+  const [registerError, setRegisterError] = useState("");
+
+  // password show korar jonno
+
+  const [showPassword, setShowPassword] = useState(false);
+
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -16,12 +24,27 @@ const Register = () => {
     const img = form.img.value;
     const email = form.email.value;
     const password = form.password.value;
+    const terms = form.terms.checked;
 
-    console.log(name, img, email, password);
+    console.log(name, img, email, password, terms);
 
+    // reset error
+
+    setRegisterError("");
     // validation password
     if (password.length < 6) {
       toast.error("Password must be 6 characters");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setRegisterError(
+        "Your password should have at least one upper case characters."
+      );
+      return;
+    } else if (!/[!@#$%^&*()_+{}/:;<>,.?~|-]/.test(password)) {
+      setRegisterError("Your password should have a special character");
+      return;
+    } else if (!terms) {
+      setRegisterError("Please accept our terms and conditions");
       return;
     }
 
@@ -36,8 +59,9 @@ const Register = () => {
         });
       })
       .catch((error) => {
-        toast.error("please try again");
+        toast.error("please try again ");
         console.log(error);
+        setRegisterError(error.message);
       });
   };
 
@@ -95,14 +119,38 @@ const Register = () => {
                   <label className="label">
                     <span className="label-text">Password</span>
                   </label>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="password"
-                    required
-                    className="input input-bordered bg-slate-400 text-black"
-                  />
 
+                  {/* password filed toggle  */}
+                  <div
+                    className="flex
+                  items-center relative "
+                  >
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      placeholder="password"
+                      required
+                      className="input input-bordered bg-slate-400 text-black w-full"
+                    />
+                    {/* show password ar jonno handle  */}
+                    <span
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute "
+                    >
+                      {showPassword ? (
+                        <FaEye></FaEye>
+                      ) : (
+                        <FaEyeSlash></FaEyeSlash>
+                      )}
+                    </span>
+                  </div>
+                  <div className="my-4">
+                    {/* input for terms  */}
+                    <input type="checkbox" name="terms" id="terms" />
+                    <label htmlFor="terms">
+                      Accept Our Terms And Conditions
+                    </label>
+                  </div>
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">
                       Forgot password?
@@ -120,6 +168,11 @@ const Register = () => {
                 </label>
               </div>
             </form>
+            {registerError && (
+              <p className="text-medium text-red-400 p-2 text-center">
+                {registerError}
+              </p>
+            )}
           </div>
         </div>
       </div>

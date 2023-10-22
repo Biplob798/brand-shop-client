@@ -56,7 +56,6 @@ const ViewDetails = () => {
           </div>
         </div>
       </div>
-          
     </div>
   );
 };

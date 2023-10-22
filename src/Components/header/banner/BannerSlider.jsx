@@ -7,8 +7,8 @@ const BannerSlider = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
   return (
     <div>
@@ -20,7 +20,7 @@ const BannerSlider = () => {
       <Slider {...settings}>
         <div className="card">
           <img
-            className="w-96  h-48"
+            className="w-full h-56"
             src="https://i.ibb.co/pxVyM9F/adidas.webp"
             alt=""
           />
@@ -30,7 +30,7 @@ const BannerSlider = () => {
         </div>
         <div>
           <img
-            className="w-96  h-48"
+            className="w-full h-56"
             src="https://i.ibb.co/pj9KNMR/guccihome.jpg"
             alt=""
           />
@@ -41,7 +41,7 @@ const BannerSlider = () => {
         </div>
         <div>
           <img
-            className="w-96  h-48"
+            className="w-full h-56"
             src="https://i.ibb.co/JjtDKvZ/nikehome.webp"
             alt=""
           />
@@ -51,7 +51,7 @@ const BannerSlider = () => {
         </div>
         <div>
           <img
-            className="w-96  h-48"
+            className="w-full h-56"
             src="https://i.ibb.co/YtvL0pb/jarahome.jpg"
             alt=""
           />
@@ -61,7 +61,7 @@ const BannerSlider = () => {
         </div>
         <div>
           <img
-            className="w-96  h-48"
+            className="w-full h-56"
             src="https://i.ibb.co/D7mnhwP/hmhome.jpg"
             alt=""
           />
@@ -71,7 +71,7 @@ const BannerSlider = () => {
         </div>
         <div>
           <img
-            className="w-96 h-48"
+            className="w-full h-56"
             src="https://i.ibb.co/rw2gY0Y/pandahome.jpg"
             alt=""
           />
