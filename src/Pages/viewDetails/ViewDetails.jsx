@@ -9,6 +9,7 @@ const ViewDetails = () => {
   const details = viewDetailsProduct.find((detail) => detail._id === _id);
 
   console.log(viewDetailsProduct);
+  console.log(details);
 
   const handleAddCart = (details) => {
     const photo = details.photo;

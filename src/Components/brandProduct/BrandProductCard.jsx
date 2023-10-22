@@ -40,9 +40,11 @@ const BrandProductCard = ({ productsBrand }) => {
               </button>
             </Link>
           </div>
-          <div className="card-actions ">
+          <div className="card-actions">
             {" "}
-            <button className="w-full mt-4 btn btn-outline">Update</button>
+            <Link to={`/updateProduct/${_id}`}>
+              <button className="w-full mt-4 btn btn-outline">Update</button>
+            </Link>
           </div>
         </div>
       </div>
