@@ -42,27 +42,69 @@ const BrandProduct = () => {
       <div>
         <h2 className="text-center font-bold text-2xl text-slate-500 p-2 ">
           {" "}
-          Our BrandsProduct
+          Our Brands
         </h2>
         <hr className="mb-4" />
         <Slider {...settings}>
           <div className="card">
-            <img className="w-full  h-48" src={photo} alt="" />
+            <img
+              className="w-full h-56"
+              src="https://i.ibb.co/pxVyM9F/adidas.webp"
+              alt=""
+            />
             <div className="text-center font-bold ">
-              <h3>{brand}</h3>
+              <h3>Adidas</h3>
             </div>
           </div>
           <div>
-            <img className="w-full  h-48" src={photo} alt="" />
+            <img
+              className="w-full h-56"
+              src="https://i.ibb.co/pj9KNMR/guccihome.jpg"
+              alt=""
+            />
 
             <div className="text-center font-bold ">
-              <h3>{brand}</h3>
+              <h3>Gucci</h3>
             </div>
           </div>
           <div>
-            <img className="w-full  h-48" src={photo} alt="" />
+            <img
+              className="w-full h-56"
+              src="https://i.ibb.co/JjtDKvZ/nikehome.webp"
+              alt=""
+            />
             <div className="text-center font-bold ">
-              <h3>{brand}</h3>
+              <h3>Nike</h3>
+            </div>
+          </div>
+          <div>
+            <img
+              className="w-full h-56"
+              src="https://i.ibb.co/YtvL0pb/jarahome.jpg"
+              alt=""
+            />
+            <div className="text-center font-bold ">
+              <h3>Zara</h3>
+            </div>
+          </div>
+          <div>
+            <img
+              className="w-full h-56"
+              src="https://i.ibb.co/D7mnhwP/hmhome.jpg"
+              alt=""
+            />
+            <div className="text-center font-bold ">
+              <h3>H/M</h3>
+            </div>
+          </div>
+          <div>
+            <img
+              className="w-full h-56"
+              src="https://i.ibb.co/rw2gY0Y/pandahome.jpg"
+              alt=""
+            />
+            <div className="text-center font-bold ">
+              <h3>Panda</h3>
             </div>
           </div>
         </Slider>

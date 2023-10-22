@@ -18,13 +18,16 @@ const ViewDetails = () => {
     const newCart = { photo, name, description };
 
     //  send data to the server:
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newCart),
-    })
+    fetch(
+      "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/cart",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newCart),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

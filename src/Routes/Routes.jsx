@@ -21,7 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/product"),
+        loader: () =>
+          fetch(
+            "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/product"
+          ),
       },
       {
         path: "/addProduct",
@@ -38,7 +41,10 @@ const router = createBrowserRouter([
             <UpdateProduct></UpdateProduct>
           </Private>
         ),
-        loader: () => fetch("http://localhost:5000/product"),
+        loader: () =>
+          fetch(
+            "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/product"
+          ),
       },
 
       {
@@ -50,7 +56,10 @@ const router = createBrowserRouter([
           </Private>
         ),
 
-        loader: () => fetch("http://localhost:5000/cart"),
+        loader: () =>
+          fetch(
+            "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/cart"
+          ),
       },
 
       {
@@ -61,7 +70,9 @@ const router = createBrowserRouter([
           </Private>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.brand}`),
+          fetch(
+            `https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/product/${params.brand}`
+          ),
       },
 
       {
@@ -72,7 +83,10 @@ const router = createBrowserRouter([
             <ViewDetails></ViewDetails>
           </Private>
         ),
-        loader: () => fetch("http://localhost:5000/product"),
+        loader: () =>
+          fetch(
+            "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/product"
+          ),
       },
 
       {

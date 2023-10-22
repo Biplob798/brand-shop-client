@@ -19,13 +19,16 @@ const AddProduct = () => {
     console.log(newProduct);
 
     // send data to the server product
-    fetch("http://localhost:5000/product", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    })
+    fetch(
+      "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/product",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -39,13 +42,16 @@ const AddProduct = () => {
         }
       });
     // send data to the server brants
-    fetch("http://localhost:5000/brand", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newBrand),
-    })
+    fetch(
+      "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/brand",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newBrand),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
