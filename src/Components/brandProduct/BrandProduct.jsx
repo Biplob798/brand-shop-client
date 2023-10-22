@@ -15,7 +15,6 @@ const BrandProduct = () => {
     slidesToScroll: 1,
   };
   console.log(brandProduct);
-  const { brand, photo } = brandProduct;
 
   // No product in brandProduct
 

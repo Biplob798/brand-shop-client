@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () =>
           fetch(
-            "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/product"
+            "https://brand-shop-server-side-s22kl9k42-biplobs-projects-623841b5.vercel.app/product"
           ),
       },
       {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/product"
+            "https://brand-shop-server-side-s22kl9k42-biplobs-projects-623841b5.vercel.app/product"
           ),
       },
 
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
 
         loader: () =>
           fetch(
-            "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/cart"
+            "https://brand-shop-server-side-s22kl9k42-biplobs-projects-623841b5.vercel.app/cart"
           ),
       },
 
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/product/${params.brand}`
+            `https://brand-shop-server-side-s22kl9k42-biplobs-projects-623841b5.vercel.app/product/${params.brand}`
           ),
       },
 
@@ -85,7 +85,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            "https://brand-shop-server-side-iwp23vyn4-biplobs-projects-623841b5.vercel.app/product"
+            "https://brand-shop-server-side-s22kl9k42-biplobs-projects-623841b5.vercel.app/product"
           ),
       },
 
