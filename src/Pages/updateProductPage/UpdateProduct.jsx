@@ -2,43 +2,37 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
-  const updateProduct = useLoaderData();
-
+  const productLoader = useLoaderData();
   const { _id } = useParams();
-  const updates = updateProduct.find((detail) => detail._id === _id);
-
-  console.log(updates);
-  console.log(updateProduct);
+  const updates = productLoader.find((product) => product._id === _id);
 
   // update handle
 
-  const handleUpdateProduct = (e) => {
-    e.preventDefault();
-    const form = e.target;
+  const handleUpdateProduct = (event) => {
+    event.preventDefault();
+    const form = event.target;
     const name = form.name.value;
-    const price = form.price.value;
-    const description = form.description.value;
     const brand = form.brand.value;
     const type = form.type.value;
+    const price = form.price.value;
+    const description = form.description.value;
     const rating = form.rating.value;
     const photo = form.photo.value;
-
     const updateProduct = {
       name,
-      price,
-      description,
       brand,
       type,
+      price,
+      description,
       rating,
       photo,
     };
-
     console.log(updateProduct);
 
     // send data to server
 
     fetch(`http://localhost:5000/product/${_id}`, {
-      method: "POST",
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
