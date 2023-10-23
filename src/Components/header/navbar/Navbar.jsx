@@ -13,7 +13,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? " underline font-bold text-base"
+              ? "text-amber-800 underline font-bold text-base"
               : " font-semibold "
           }
           to="/"
@@ -29,7 +29,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? " underline font-bold text-base"
+              ? "text-amber-800 underline font-bold text-base"
               : " font-semibold "
           }
           to="/addProduct"
@@ -44,7 +44,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? " underline font-bold text-base"
+              ? "text-amber-800 underline font-bold text-base"
               : " font-semibold "
           }
           to="/updateProduct"
@@ -60,7 +60,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? " underline font-bold text-base"
+              ? "text-amber-800 underline font-bold text-base"
               : " font-semibold "
           }
           to="/about"
@@ -75,7 +75,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? " underline font-bold text-base"
+              ? "text-amber-800 underline font-bold text-base"
               : " font-semibold "
           }
           to="/cart"
@@ -90,7 +90,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? " underline font-bold text-base"
+              ? "text-amber-800 underline font-bold text-base"
               : " font-semibold "
           }
           to="/register"
@@ -105,7 +105,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? " underline font-bold text-base"
+              ? "text-amber-800 underline font-bold text-base"
               : " font-semibold "
           }
           to="/login"

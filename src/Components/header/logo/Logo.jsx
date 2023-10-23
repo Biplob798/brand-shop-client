@@ -1,3 +1,5 @@
+import DarkMode from "../../darkAndLightMode/DarkMode";
+
 const Logo = () => {
   return (
     <div>
@@ -8,6 +10,7 @@ const Logo = () => {
           alt=""
         />
         <h2 className="text-2xl font-mono font-bold">Brand Shop</h2>
+        <DarkMode></DarkMode>
       </div>
     </div>
   );

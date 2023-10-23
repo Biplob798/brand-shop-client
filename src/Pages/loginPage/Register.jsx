@@ -68,14 +68,14 @@ const Register = () => {
   return (
     <div>
       {" "}
-      <div className="hero min-h-screen p-8 bg-slate-700 ">
-        <div className="hero-content flex-col bg-slate-400 text-black ">
+      <div className="hero min-h-screen p-8 bg-white text-black ">
+        <div className="hero-content flex-col bg-white text-black">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold border rounded-lg p-4 shadow-2xl bg-slate-400 text-black">
+            <h1 className="text-5xl font-bold border rounded-lg p-4 shadow-2xl bg-white text-black">
               Register now
             </h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-400 text-black">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-white text-black">
             <form onSubmit={handleRegister}>
               <div className="card-body">
                 <div className="form-control">
@@ -87,7 +87,7 @@ const Register = () => {
                     name="name"
                     placeholder="your name"
                     required
-                    className="input input-bordered bg-slate-400 text-black"
+                    className="input input-bordered bg-white text-black"
                   />
                 </div>
                 <div className="form-control">
@@ -99,7 +99,7 @@ const Register = () => {
                     name="img"
                     placeholder="image url"
                     required
-                    className="input input-bordered bg-slate-400 text-black"
+                    className="input input-bordered bg-white text-black"
                   />
                 </div>
 
@@ -112,7 +112,7 @@ const Register = () => {
                     name="email"
                     placeholder="email"
                     required
-                    className="input input-bordered bg-slate-400 text-black"
+                    className="input input-bordered bg-white text-black"
                   />
                 </div>
                 <div className="form-control">
@@ -130,7 +130,7 @@ const Register = () => {
                       name="password"
                       placeholder="password"
                       required
-                      className="input input-bordered bg-slate-400 text-black w-full"
+                      className="input input-bordered bg-white text-black w-full"
                     />
                     {/* show password ar jonno handle  */}
                     <span

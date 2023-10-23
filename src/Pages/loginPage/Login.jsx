@@ -49,14 +49,14 @@ const Login = () => {
   return (
     <div>
       {" "}
-      <div className="hero min-h-screen border bg-slate-700 p-6">
-        <div className="hero-content flex-col bg-slate-400">
-          <div className="text-center lg:text-left bg-slate-400 text-white">
-            <h1 className="text-5xl font-bold border rounded-lg p-4 shadow-2xl bg-slate-400 text-black">
+      <div className="hero min-h-screen bg-white text-black p-6">
+        <div className="hero-content flex-col bg-white text-black">
+          <div className="text-center lg:text-left bg-white text-black">
+            <h1 className="text-5xl font-bold border rounded-lg p-4 shadow-2xl bg-white text-black">
               Login now
             </h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-400">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-white text-black">
             <form onSubmit={handleSignIn}>
               <div className="card-body">
                 <div className="form-control">
@@ -68,7 +68,7 @@ const Login = () => {
                     name="email"
                     placeholder="email"
                     required
-                    className="input input-bordered bg-slate-400 text-white"
+                    className="input input-bordered bg-white text-black"
                   />
                 </div>
                 <div className="form-control">
@@ -80,7 +80,7 @@ const Login = () => {
                     name="password"
                     placeholder="password"
                     required
-                    className="input input-bordered bg-slate-400 text-white"
+                    className="input input-bordered bg-white text-black"
                   />
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">
@@ -105,11 +105,11 @@ const Login = () => {
             <p className="text-center space-x-5 p-4">
               <button
                 onClick={handleGoogleLogin}
-                className=" btn btn-sm bg-slate-400 text-black"
+                className=" btn btn-sm bg-white text-black"
               >
                 Google
               </button>
-              <button className=" btn btn-sm bg-slate-400 text-black">
+              <button className=" btn btn-sm bg-white text-black">
                 Github
               </button>
             </p>
