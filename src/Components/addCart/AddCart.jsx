@@ -17,7 +17,7 @@ const AddCart = ({ cart, products, setProducts }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://brand-shop-server-side-s22kl9k42-biplobs-projects-623841b5.vercel.app/cart/${_id}`,
+          `https://brand-shop-server-side-cbsspyp0v-biplobs-projects-623841b5.vercel.app/cart/${_id}`,
           {
             method: "DELETE",
           }
